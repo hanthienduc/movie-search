@@ -21,8 +21,8 @@ export function SearchMovie() {
   return (
     <section className="search-movies">
       <h1>Search Movie</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="search" value={searchString} placeholder="enter movie name"
+      <form onSubmit={handleSubmit} className="search-form">
+        <input type="search" value={searchString} placeholder="Search for movie..."
           name="searchString" onChange={(e) => setSearchString(e.target.value)} />
         <button type="submit">Search</button>
       </form>

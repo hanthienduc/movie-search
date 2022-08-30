@@ -33,9 +33,9 @@ export function Card({ movie }: CardType) {
       {movie.poster_path && <img onClick={displayMovieDetail} className="card-img"
         src={getImgUrl({ width: 94, height: 141, string_url: movie.poster_path })} alt={movie.title} />}
       <div className="card-detail">
-        <h1 onClick={displayMovieDetail} className="title">{movie.title}</h1>
+        <h2 onClick={displayMovieDetail} className="title">{movie.title}</h2>
         <p className="release_date">{movie.release_date}</p>
-        <p className="overview">{truncateString(movie.overview, 150)}</p>
+        <p className="overview">{movie.overview}</p>
       </div>
     </div>
   )

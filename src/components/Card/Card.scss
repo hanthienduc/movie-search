@@ -10,6 +10,13 @@ $light-grey: 227 227 227;
   .card-img {
     cursor: pointer;
   }
+  .title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
   .release_date {
     color: #999;
     white-space: nowrap;
