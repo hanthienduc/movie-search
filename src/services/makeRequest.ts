@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const api = axios.create({
   baseURL: 'https://api.themoviedb.org/3',
-  withCredentials: true,
+  withCredentials: false,
 })
 
 export function makeRequest(url: string, options: any) {
