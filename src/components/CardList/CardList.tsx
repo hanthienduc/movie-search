@@ -1,6 +1,6 @@
 import { Movie } from "../../types/Movie"
 import { Card } from "../Card/Card"
-
+import './CardList.scss'
 type CardListType = {
   loading: boolean,
   error?: string,

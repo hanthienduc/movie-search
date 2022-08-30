@@ -23,7 +23,7 @@ export function Detail() {
     <>
       {movie !== undefined &&
         (<div className="detail">
-          <img src={getImgUrl(movie?.poster_path)} alt="" />
+          <img src={getImgUrl({ string_url: movie?.poster_path })} alt="" />
         </div>)
       }
     </>
