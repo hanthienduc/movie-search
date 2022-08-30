@@ -1,10 +1,13 @@
 import React from 'react';
+import { Detail } from './pages/Detail';
 import { SearchMovie } from './pages/SearchMovie';
 
 function App() {
+
   return (
     <div className="App">
-      <SearchMovie />
+      <SearchMovie /> 
+      <Detail />     
     </div>
   );
 }

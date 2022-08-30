@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { searchMovies } from "../services/movie";
 import { Movie } from "../types/Movie";
 
 export type MovieProviderType = {
