@@ -19,7 +19,7 @@ export function CardList({ loading, error, results }: CardListType) {
   return (
     <div className="card-list">
       {results?.map(movie => {
-        return <Card movie={movie} />
+        return <Card key={movie.id} movie={movie} />
       })}
     </div>
   )
