@@ -14,7 +14,7 @@ export function searchMovies({ queryString }: SearchCustomType) {
 //  https://api.themoviedb.org/3/movie/{movie_id}?api_key={apikey})
 export function getMovieDetail({ movie_id }: SearchCustomType) {
   return makeRequest(
-    `/movie/${movie_id}?api_Key=${process.env.REACT_APP_TMDB_API_KEY}`,
+    `/movie/${movie_id}?api_key=${process.env.REACT_APP_TMDB_API_KEY}`,
     {
       method: 'GET',
     }
