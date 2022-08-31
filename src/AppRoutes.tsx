@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import { Detail } from "./pages/Detail";
-import { Favorite } from "./pages/Favorite";
-import { SearchMovie } from "./pages/Search";
+import { Detail } from "./pages/Detail/Detail";
+import { Favorite } from "./pages/Favorite/Favorite";
+import { SearchMovie } from "./pages/Search/Search";
 
 export function AppRoutes() {
   return (

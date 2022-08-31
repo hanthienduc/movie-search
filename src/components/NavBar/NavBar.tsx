@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-
+import './NavBar.scss'
 export function NavBar() {
   return (
-    <nav>
-      <ul>
+    <nav className="nav">
+      <ul className="nav-list">
         <li>
-          <Link to={"/"}>Home</Link>
+          <Link className="nav-link" to={"/"}>Home</Link>
         </li>
         <li>
-          <Link to={"/favorite"}>Favorites</Link>
+          <Link className="nav-link" to={"/favorite"}>Favorites</Link>
         </li>
       </ul>
     </nav>

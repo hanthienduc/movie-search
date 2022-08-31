@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { IconButton } from "../components/IconButton/IconButton";
-import { useAsync } from "../hooks/useAsync";
-import { getMovieDetail } from "../services/movie";
-import { Movie } from "../types/Movie";
-import { getImgUrl } from "../utils/getImgUrl";
+import { IconButton } from "../../components/IconButton/IconButton";
+import { useAsync } from "../../hooks/useAsync";
+import { getMovieDetail } from "../../services/movie";
+import { Movie } from "../../types/Movie";
+import { getImgUrl } from "../../utils/getImgUrl";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { useMovieContext } from "../context/MovieContext";
+import { useMovieContext } from "../../context/MovieContext";
 
 export function Detail() {
   const { movieId } = useParams();

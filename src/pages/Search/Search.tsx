@@ -1,8 +1,8 @@
 import { SyntheticEvent, useState } from "react";
-import { CardList } from "../components/CardList/CardList";
-import { useMovieContext } from "../context/MovieContext";
-import { useAsyncFn } from "../hooks/useAsync";
-import { searchMovies } from "../services/movie";
+import { CardList } from "../../components/CardList/CardList";
+import { useMovieContext } from "../../context/MovieContext";
+import { useAsyncFn } from "../../hooks/useAsync";
+import { searchMovies } from "../../services/movie";
 
 export function SearchMovie() {
 
