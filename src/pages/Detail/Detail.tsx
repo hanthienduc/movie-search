@@ -8,7 +8,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useMovieContext } from "../../context/MovieContext";
 import './Detail.scss'
-import { formateDate } from "../../utils/formatDate";
+import { formatDate } from "../../utils/formatDate";
 import { formatTime } from "../../utils/formatTime";
 export function Detail() {
   const { movieId } = useParams();
@@ -32,7 +32,6 @@ export function Detail() {
         setIsFavorite(true);
       }
     }
-
 
   }, [favoriteMovies, movie]);
 
@@ -75,7 +74,7 @@ export function Detail() {
               <span>({new Date(movie.release_date).getFullYear()})</span>
             </div>
             <div className="date-and-genres">
-              <p className="release-date">{formateDate(movie.release_date)}</p>
+              <p className="release-date">{formatDate(movie.release_date)}</p>
               <span className="dot"></span>
               <p className="genres">{movie.genres.map((genre, index, arr) => {
                 return arr.length - 1 !== index ? `${genre.name}, ` : `${genre.name}`

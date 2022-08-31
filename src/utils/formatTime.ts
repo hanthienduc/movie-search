@@ -1,5 +1,5 @@
 /**
- * 
+ * a function used to return formatted time 
  * @param num 
  * @returns formatted time HH/MM
  */

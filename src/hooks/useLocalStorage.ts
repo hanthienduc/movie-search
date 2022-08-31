@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 /**
- * 
- * @param key 
- * @param initialValue 
+ * a function used to add or get value from localStorage and set it as return state
+ * @param key: string 
+ * @param initialValue: either generic type being passed, or function that return that generic type 
  * @returns custom state with localStorage
  */
 export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {

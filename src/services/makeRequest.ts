@@ -5,9 +5,9 @@ const api = axios.create({
   withCredentials: false,
 })
 /**
- * 
+ * a function used to return the result from the api call
  * @param url api end points
- * @param options 
+ * @param options  specify method, data for the request
  * @returns a Promise with data as success state and error message as reject state 
  */
 export function makeRequest(url: string, options: any) {
