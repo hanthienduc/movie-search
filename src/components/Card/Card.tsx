@@ -12,7 +12,7 @@ export function Card({ movie }: CardType) {
   const navigate = useNavigate()
 
   function displayMovieDetail() {
-    navigate(`movie/${movie.id}`)
+    navigate(`/movie/${movie.id}`, {replace: true})
   }
 
   useEffect(() => {

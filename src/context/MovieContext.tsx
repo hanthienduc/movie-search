@@ -32,7 +32,10 @@ export function MovieProvider({ children }: MovieProviderType) {
 
   function addFavoriteMovieLocal(movie: Movie) {
     setFavoriteMovies((prevFavoriteMovies) => {
-      return [...prevFavoriteMovies, movie];
+      const checkExist = prevFavoriteMovies.find(
+        (currentMovie) => currentMovie.id === movie.id
+      );
+      return checkExist ? prevFavoriteMovies : [...prevFavoriteMovies, movie];
     });
   }
 

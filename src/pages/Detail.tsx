@@ -5,7 +5,7 @@ import { getMovieDetail } from "../services/movie";
 import { Movie } from "../types/Movie";
 import { getImgUrl } from "../utils/getImgUrl";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMovieContext } from "../context/MovieContext";
 
 export function Detail() {
@@ -18,7 +18,27 @@ export function Detail() {
 
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
-  const { addFavoriteMovieLocal, removeFavoriteMovieLocal } = useMovieContext();
+  const { favoriteMovies, addFavoriteMovieLocal, removeFavoriteMovieLocal } =
+    useMovieContext();
+
+  useEffect(() => {
+    const findFavorite = favoriteMovies.find(
+      (existingMovie) => existingMovie.id === movie?.id
+    );
+    if (findFavorite) {
+      setIsFavorite(true);
+    }
+  }, [favoriteMovies, movie]);
+
+  useEffect(() => {
+    if (movie !== undefined) {
+      if (isFavorite) {
+        addFavoriteMovieLocal(movie);
+      } else {
+        removeFavoriteMovieLocal(movie?.id);
+      }
+    }
+  }, [isFavorite]);
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -29,13 +49,6 @@ export function Detail() {
 
   function toggleFavoriteMovie() {
     setIsFavorite((prevState) => !prevState);
-    if (movie !== undefined) {
-      if (isFavorite) {
-        addFavoriteMovieLocal(movie);
-      } else {
-        removeFavoriteMovieLocal(movie?.id);
-      }
-    }
   }
 
   return (
