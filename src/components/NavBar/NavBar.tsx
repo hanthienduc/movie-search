@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './NavBar.scss'
 export function NavBar() {
   return (
     <nav className="nav">
       <ul className="nav-list">
         <li>
-          <Link className="nav-link" to={"/"}>Home</Link>
+          <NavLink className="nav-link" to={"/"}>Home</NavLink>
         </li>
         <li>
           <Link className="nav-link" to={"/favorite"}>Favorites</Link>

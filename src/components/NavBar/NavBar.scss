@@ -1,5 +1,4 @@
 .nav {
-
 }
 
 a {
@@ -11,4 +10,10 @@ a {
   display: flex;
   padding: 1em 1em;
   gap: 1em;
+  .nav-link {
+    color: #000;
+    &:hover {
+      color: blue;
+    }
+  }
 }
