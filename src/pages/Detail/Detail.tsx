@@ -63,7 +63,7 @@ export function Detail() {
             <p className="overview">{movie.overview}</p>
             <IconButton
               isActive={isFavorite}
-              callToggleFavorite={toggleFavoriteMovie}
+              onClick={toggleFavoriteMovie}
               Icon={isFavorite ? FaHeart : FaRegHeart}
             />
           </div>

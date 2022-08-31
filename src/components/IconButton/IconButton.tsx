@@ -5,18 +5,18 @@ type IconButtonProp = {
   Icon: any;
   isActive?: boolean;
   children?: ReactNode;
-  callToggleFavorite: () => void;
+  onClick?: () => void;
 };
 
 export function IconButton({
   Icon,
   isActive,
   children,
-  callToggleFavorite,
+  onClick,
 }: IconButtonProp) {
   return (
     <>
-      <button onClick={callToggleFavorite} className={`btn icon-btn ${isActive ? "icon-btn-active" : ""}`}>
+      <button onClick={onClick} className={`btn icon-btn ${isActive ? "icon-btn-active" : ""}`}>
         <span>
           <Icon />
         </span>

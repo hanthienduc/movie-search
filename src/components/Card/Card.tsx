@@ -15,18 +15,6 @@ export function Card({ movie }: CardType) {
     navigate(`/movie/${movie.id}`, {replace: true})
   }
 
-  useEffect(() => {
-
-    function chunkImageSize(e: UIEvent) {
-      console.log(e.target)
-    }
-
-    window.addEventListener('resize', chunkImageSize)
-    return () => {
-      return window.removeEventListener('resize', chunkImageSize)
-    }
-  }, [])
-
   return (
     <div className="card">
       {movie.poster_path && <img onClick={displayMovieDetail} className="card-img"
