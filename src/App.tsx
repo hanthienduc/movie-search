@@ -1,16 +1,9 @@
-import React from 'react'
-import { Route, Routes } from "react-router-dom";
-import { Detail } from './pages/Detail';
-import { SearchMovie } from './pages/SearchMovie';
+import { AppRoutes } from "./AppRoutes";
 
 function App() {
-
   return (
-    <div className='app'>
-      <Routes>
-        <Route path="/" element={<SearchMovie />} />
-        <Route path="movie/:movieId" element={<Detail />} />
-      </Routes>
+    <div className="app">
+      <AppRoutes />
     </div>
   );
 }

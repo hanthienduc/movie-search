@@ -2,7 +2,6 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { Movie } from "../../types/Movie"
 import { getImgUrl } from "../../utils/getImgUrl"
-import { truncateString } from "../../utils/truncateString"
 import './Card.scss'
 type CardType = {
   movie: Movie
