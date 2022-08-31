@@ -7,7 +7,7 @@ export function Favorite() {
 
   return (
     <div className="favorite-container">
-      <h1>Favorites</h1>
+      <h1 data-testid='favorite-title'>Favorites</h1>
       <CardList results={favoriteMovies} />
     </div>
   );

@@ -24,12 +24,16 @@ export function Detail() {
     useMovieContext();
 
   useEffect(() => {
-    const findFavorite = favoriteMovies.find(
-      (existingMovie) => existingMovie.id === movie?.id
-    );
-    if (findFavorite) {
-      setIsFavorite(true);
+    if (favoriteMovies !== undefined) {
+      const findFavorite = favoriteMovies.find(
+        (existingMovie) => existingMovie.id === movie?.id
+      );
+      if (findFavorite) {
+        setIsFavorite(true);
+      }
     }
+
+
   }, [favoriteMovies, movie]);
 
   useEffect(() => {
@@ -65,7 +69,7 @@ export function Detail() {
           )}
           <div className="detail-content">
             <div className="title">
-              <h2>{movie.title}</h2>
+              <h2 data-testid='title'>{movie.title}</h2>
               <span>({new Date(movie.release_date).getFullYear()})</span>
             </div>
             <div className="date-and-genres">
