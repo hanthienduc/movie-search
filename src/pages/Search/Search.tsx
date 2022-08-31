@@ -13,6 +13,9 @@ export function SearchMovie() {
 
   function handleSubmit(e: SyntheticEvent) {
     e.preventDefault()
+    if (searchString === '' || searchString == null) {
+      return
+    }
     searchMoviesFunc.execute({ queryString: searchString })
       .then((data) => {
         createSearchMovieResultLocal(data.results)
@@ -26,7 +29,7 @@ export function SearchMovie() {
         <input className="search-input" autoFocus type="search" value={searchString} placeholder="Search for movie..."
           name="searchString" onChange={(e) => setSearchString(e.target.value)} />
         <button className="search-btn" type="submit">
-          <FaSearch  />
+          <FaSearch />
         </button>
       </form>
       {<CardList loading={searchMoviesFunc.loading}

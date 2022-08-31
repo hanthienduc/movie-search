@@ -7,7 +7,9 @@ import { getImgUrl } from "../../utils/getImgUrl";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useMovieContext } from "../../context/MovieContext";
-
+import './Detail.scss'
+import { formateDate } from "../../utils/formatDate";
+import { formatTime } from "../../utils/formatTime";
 export function Detail() {
   const { movieId } = useParams();
   const {
@@ -56,16 +58,38 @@ export function Detail() {
       {movie !== undefined && (
         <div className="detail">
           {movie.poster_path && (
-            <img src={getImgUrl({ string_url: movie?.poster_path })} alt="" />
+            <img
+              className="poster"
+              src={getImgUrl({ string_url: movie?.poster_path, width: 300, height: 450 })} alt={movie.title} />
           )}
           <div className="detail-content">
-            <h2 className="title">{movie.title}</h2>
-            <p className="overview">{movie.overview}</p>
-            <IconButton
-              isActive={isFavorite}
-              onClick={toggleFavoriteMovie}
-              Icon={isFavorite ? FaHeart : FaRegHeart}
-            />
+            <div className="title">
+              <h2>{movie.title}</h2>
+              <span>({new Date(movie.release_date).getFullYear()})</span>
+            </div>
+            <div className="date-and-genres">
+              <p className="release-date">{formateDate(movie.release_date)}</p>
+              <span className="dot"></span>
+              <p className="genres">{movie.genres.map((genre, index, arr) => {
+                return arr.length - 1 !== index ? `${genre.name}, ` : `${genre.name}`
+              })}</p>
+              <span className="dot"></span>
+              <p>{formatTime(movie.runtime)}</p>
+            </div>
+            <div className="favorite">
+              <IconButton
+                aria-label={isFavorite ? 'Add Favorite' : 'Remove Favorite'}
+                isActive={isFavorite}
+                onClick={toggleFavoriteMovie}
+                Icon={isFavorite ? FaHeart : FaRegHeart}
+              />
+            </div>
+            <p className="tagline">{movie.tagline}</p>
+            <div className="overview">
+              <h2>Overview</h2>
+              <p className="overview">{movie.overview}</p>
+            </div>
+            <p>{movie.vote_average.toFixed(1)}/10 </p>
           </div>
         </div>
       )}

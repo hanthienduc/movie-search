@@ -13,4 +13,15 @@ export interface Movie {
   video: false
   vote_average: number
   vote_count: number
+
+  genres: genre[]
+
+  runtime: number
+
+  tagline: string
+}
+
+type genre = {
+  id: number
+  name: string
 }
