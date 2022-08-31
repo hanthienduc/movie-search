@@ -10,6 +10,8 @@ import { useMovieContext } from "../../context/MovieContext";
 import './Detail.scss'
 import { formateDate } from "../../utils/formatDate";
 import { formatTime } from "../../utils/formatTime";
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 export function Detail() {
   const { movieId } = useParams();
   const {
