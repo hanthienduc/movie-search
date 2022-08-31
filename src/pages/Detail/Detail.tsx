@@ -16,7 +16,7 @@ export function Detail() {
     loading,
     error,
     value: movie,
-  } = useAsync<Movie>(() => getMovieDetail({ movie_id: movieId }));
+  } = useAsync<Movie>({ func: () => getMovieDetail({ movie_id: movieId }) });
 
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
@@ -44,7 +44,9 @@ export function Detail() {
         removeFavoriteMovieLocal(movie?.id);
       }
     }
-  }, [isFavorite]);
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isFavorite, movie]);
 
   if (loading) {
     return <h1>Loading...</h1>;

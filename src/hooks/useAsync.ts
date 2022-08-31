@@ -3,9 +3,7 @@ import { SearchCustomType } from '../types/SearchCustom'
 
 // execute immediately whenever the function is being call
 export function useAsync<Type>(
-  func: (params: SearchCustomType) => Promise<any>,
-  dependencies?: []
-) {
+{ func, dependencies }: { func: (params: SearchCustomType) => Promise<any>; dependencies?: [] }) {
   const { execute, ...state } = useAsyncInternal<Type>(func, dependencies, true)
   useEffect(() => {
     execute()
@@ -15,25 +13,25 @@ export function useAsync<Type>(
 
 // execute when the function call is in another function
 export function useAsyncFn<Type>(
-  func: (params: SearchCustomType) => Promise<any>,
+  serviceFunc: (params: SearchCustomType) => Promise<any>,
   dependencies?: []
 ) {
-  return useAsyncInternal<Type>(func, dependencies, false)
+  return useAsyncInternal<Type>(serviceFunc, dependencies, false)
 }
 
 export function useAsyncInternal<Type>(
-  func: (params: SearchCustomType) => Promise<any>,
-  dependencies?: [],
+  serviceFunc: (params: SearchCustomType) => Promise<any>,
+  dependencies = [],
   initialLoading = false
 ) {
   const [loading, setLoading] = useState(initialLoading)
   const [error, setError] = useState()
   const [value, setValue] = useState<Type>()
 
-  const execute = useCallback(async (params?: any) => {
+  const execute = useCallback(async (params?: SearchCustomType) => {
     setLoading(true)
     try {
-      const data = await func({ ...params })
+      const data = await serviceFunc({ ...params })
       setValue(data)
       setError(undefined)
       return data
@@ -43,7 +41,8 @@ export function useAsyncInternal<Type>(
     } finally {
       setLoading(false)
     }
-  }, dependencies ?? [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, dependencies)
 
   return { loading, error, value, execute }
 }
