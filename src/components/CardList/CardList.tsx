@@ -4,9 +4,10 @@ import './CardList.scss'
 type CardListType = {
   loading?: boolean,
   error?: string,
-  results: Movie[] | null
+  results: Movie[] | null,
+  cardGrid?: boolean
 }
-export function CardList({ loading, error, results }: CardListType) {
+export function CardList({ loading, error, results, cardGrid = false }: CardListType) {
 
   if (loading) {
     return <h1>Loading...</h1>
@@ -17,9 +18,9 @@ export function CardList({ loading, error, results }: CardListType) {
   }
 
   return (
-    <div className="card-list">
+    <div className={`card-list ${cardGrid ? 'd-grid' : 'd-flex'}`}>
       {results?.map(movie => {
-        return <Card key={movie.id} movie={movie} />
+        return <Card flexColumn={cardGrid} key={movie.id} movie={movie} />
       })}
     </div>
   )

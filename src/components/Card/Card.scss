@@ -42,3 +42,10 @@ $light-grey: 227 227 227;
     }
   }
 }
+
+.flex-column {
+  flex-direction: column;
+}
+.small {
+  font-size: 1rem;
+}

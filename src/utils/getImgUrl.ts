@@ -14,5 +14,9 @@ export function getImgUrl({ width, height, string_url }: ImgUrlProp): string {
     return `${baseUrl}/w${width}_and_h${height}_bestv2/${string_url}`
   }
 
+  if (width) {
+    return `${baseUrl}/w${width}${string_url}`
+  }
+
   return `${baseUrl}/w500/${string_url}`
 }

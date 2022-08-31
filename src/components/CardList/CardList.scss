@@ -1,9 +1,19 @@
 .card-list {
-  display: flex;
-  flex-direction: column;
   gap: 1em;
   padding: 2rem;
-  max-width: 728px;
   width: 100%;
   margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: column;
+  max-width: 728px;
+}
+
+.d-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(100% / 4));
+  max-width: 1200px;
+  justify-content: center;
 }
