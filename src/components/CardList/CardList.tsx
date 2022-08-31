@@ -2,7 +2,7 @@ import { Movie } from "../../types/Movie"
 import { Card } from "../Card/Card"
 import './CardList.scss'
 type CardListType = {
-  loading: boolean,
+  loading?: boolean,
   error?: string,
   results: Movie[] | null
 }

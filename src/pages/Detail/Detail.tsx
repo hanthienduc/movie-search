@@ -10,8 +10,6 @@ import { useMovieContext } from "../../context/MovieContext";
 import './Detail.scss'
 import { formateDate } from "../../utils/formatDate";
 import { formatTime } from "../../utils/formatTime";
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
 export function Detail() {
   const { movieId } = useParams();
   const {
@@ -61,6 +59,7 @@ export function Detail() {
         <div className="detail">
           {movie.poster_path && (
             <img
+              loading="lazy"
               className="poster"
               src={getImgUrl({ string_url: movie?.poster_path, width: 300, height: 450 })} alt={movie.title} />
           )}

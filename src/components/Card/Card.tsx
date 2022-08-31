@@ -17,7 +17,7 @@ export function Card({ movie }: CardType) {
 
   return (
     <div className="card">
-      {movie.poster_path && <img onClick={displayMovieDetail} className="card-img"
+      {movie.poster_path && <img loading="lazy" onClick={displayMovieDetail} className="card-img"
         src={getImgUrl({ width: 94, height: 141, string_url: movie.poster_path })} alt={movie.title} />}
       <div className="card-detail">
         <h2 onClick={displayMovieDetail} className="title">{movie.title}</h2>
