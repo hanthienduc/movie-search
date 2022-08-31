@@ -26,7 +26,10 @@ const pageTransition = {
 
 const PageLayout = ({ children }: pageLayoutType) => children;
 
-
+/**
+ * 
+ * @returns Wrapper of entire app with transition animation
+ */
 export const AnimationLayout = () => {
   const { pathname } = useLocation();
   return (

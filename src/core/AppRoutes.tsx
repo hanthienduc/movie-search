@@ -3,7 +3,10 @@ import { AnimationLayout } from "./AnimationLayout";
 import { Detail } from "../pages/Detail/Detail";
 import { Favorite } from "../pages/Favorite/Favorite";
 import { Search } from "../pages/Search/Search";
-
+/**
+ * 
+ * @returns Routes of app
+ */
 export function AppRoutes() {
   return (
     <Routes>

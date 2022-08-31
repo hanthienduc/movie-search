@@ -4,7 +4,12 @@ const api = axios.create({
   baseURL: 'https://api.themoviedb.org/3',
   withCredentials: false,
 })
-
+/**
+ * 
+ * @param url api end points
+ * @param options 
+ * @returns a Promise with data as success state and error message as reject state 
+ */
 export function makeRequest(url: string, options: any) {
   return api(url, options)
     .then((response) => response.data)

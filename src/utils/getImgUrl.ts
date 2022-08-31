@@ -4,6 +4,7 @@ type ImgUrlProp = {
   height?: number
   string_url: string
 }
+
 export function getImgUrl({ width, height, string_url }: ImgUrlProp): string {
   if (string_url == null) {
     return ''

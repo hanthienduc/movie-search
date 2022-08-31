@@ -18,7 +18,13 @@ export function useAsyncFn<Type>(
 ) {
   return useAsyncInternal<Type>(serviceFunc, dependencies, false)
 }
-
+/**
+ * 
+ * @param serviceFunc 
+ * @param dependencies 
+ * @param initialLoading 
+ * @returns 
+ */
 export function useAsyncInternal<Type>(
   serviceFunc: (params: SearchCustomType) => Promise<any>,
   dependencies = [],
