@@ -1,0 +1,46 @@
+$hue: 235;
+$color: hsl($hue, 100%, 67%);
+.btn {
+  padding: 0.5em 1em;
+  background: $color;
+  border: none;
+  color: white;
+  border-radius: 0.5em;
+  font-size: 1.25em;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    $color: hsl($hue, 100%, 74%);
+  }
+}
+
+.btn.icon-btn {
+  background: none;
+  color: $color;
+  padding: 0.25em;
+  display: flex;
+  align-items: center;
+  &:hover,
+  &:focus-visible {
+    $color: hsl($hue, 100%, 74%);
+  }
+}
+
+.icon-btn-active {
+  $hue: 0;
+  position: relative;
+
+//   &::before {
+//     content: "\00D7";
+//     position: absolute;
+//     font-size: 1.25em;
+//     width: 1em;
+//     height: 1em;
+//     color: white;
+//     background-color: $color;
+//     border-radius: 50%;
+//     bottom: 0.1em;
+//     right: 0.1em;
+//   }
+}
