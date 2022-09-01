@@ -48,10 +48,10 @@ export function Detail() {
   }, [isFavorite, movie]);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <h1 className="loading">Loading...</h1>;
   }
   if (error) {
-    return <h1>Error...</h1>;
+    return <h1 className="error-msg">Error...</h1>;
   }
 
   function toggleFavoriteMovie() {

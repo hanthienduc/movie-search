@@ -27,3 +27,16 @@ body {
   background: blue;
   transform-origin: 0%;
 }
+
+.loading,
+.error-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading {
+  color: blue;
+}
+.error-msg {
+  color: red;
+}

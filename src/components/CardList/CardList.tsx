@@ -10,11 +10,11 @@ type CardListType = {
 export function CardList({ loading, error, results, cardGrid = false }: CardListType) {
 
   if (loading) {
-    return <h1>Loading...</h1>
+    return <h1 className="loading">Loading...</h1>
   }
 
   if (error) {
-    return <h1>Error...</h1>
+    return <h1 className="error-msg">{error}</h1>
   }
 
   return (
