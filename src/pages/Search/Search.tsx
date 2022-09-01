@@ -32,9 +32,10 @@ export function Search() {
           <FaSearch />
         </button>
       </form>
-      {<CardList loading={searchMoviesFunc.loading}
-        error={searchMoviesFunc.error}
-        results={searchMovieResult} />}
+        {<CardList loading={searchMoviesFunc.loading}
+          error={searchMoviesFunc.error}
+          results={searchMovieResult} />}
+
     </section>
   )
 }
