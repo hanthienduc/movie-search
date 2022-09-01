@@ -1,4 +1,3 @@
-import { Link, NavLink, useMatch, useResolvedPath } from "react-router-dom";
 import { CustomLink } from "../../utils/customLink";
 import './NavBar.scss'
 export function NavBar() {
