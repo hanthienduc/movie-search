@@ -30,17 +30,4 @@ $color: hsl($hue, 100%, 67%);
 .icon-btn-active {
   $hue: 0;
   position: relative;
-
-//   &::before {
-//     content: "\00D7";
-//     position: absolute;
-//     font-size: 1.25em;
-//     width: 1em;
-//     height: 1em;
-//     color: white;
-//     background-color: $color;
-//     border-radius: 50%;
-//     bottom: 0.1em;
-//     right: 0.1em;
-//   }
 }
