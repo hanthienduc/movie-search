@@ -15,7 +15,7 @@ export function Card({ movie, flexColumn }: CardType) {
     navigate(`/movie/${movie.id}`, { replace: true })
   }
 
-  const linkProps = {
+  const imageLinkProps = {
     width: flexColumn ? 300 : 94,
     height: flexColumn ? undefined : 141,
     string_url: movie.poster_path
@@ -24,7 +24,7 @@ export function Card({ movie, flexColumn }: CardType) {
   return (
     <div className={`card ${flexColumn ? 'flex-column' : 'flex-row'}`}>
       {movie.poster_path && <img loading="lazy" onClick={displayMovieDetail} className="card-img"
-        src={getImgUrl(linkProps)} alt={movie.title} />}
+        src={getImgUrl(imageLinkProps)} alt={movie.title} />}
       <div className="card-detail">
         <h2 onClick={displayMovieDetail} className={`title ${flexColumn ? 'small' : ''}`}>{movie.title}</h2>
         <p className="release_date">{movie.release_date}</p>
