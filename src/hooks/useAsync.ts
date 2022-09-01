@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { SearchCustomType } from '../types/SearchCustom'
 
-// the execute function being execute immediately whenever the function is being called 
+// the function trigger the execute function immediately whenever the function is being called 
 // and return the results from it
 export function useAsync<Type>({
   func,
@@ -17,7 +17,7 @@ export function useAsync<Type>({
   return state
 }
 
-// execute at the time the internal execute function being called
+// execute at the time the execute function being called
 // and return the results from it
 export function useAsyncFn<Type>(
   serviceFunc: (params: SearchCustomType) => Promise<any>,
@@ -27,7 +27,7 @@ export function useAsyncFn<Type>(
 }
 /**
  * a function used a service function as based to make a request to api
- * with additional states loading, error, and values(result from the request)
+ * with additional loading, error, and values(result from the request) state
  * @param serviceFunc function that make a request to the api end point
  * @param dependencies provide the dependencies for the useCallback hook
  * @param initialLoading set initial loading state of the api call
