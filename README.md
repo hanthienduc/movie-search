@@ -7,7 +7,7 @@ https://www.themoviedb.org/
 ## Features
 - Search movie
 - See Detail of the movie
-- Add to favorite
+- Add to movie favorite list
 
 ## Instal && Setup
 - Clone the repo

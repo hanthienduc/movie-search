@@ -5,7 +5,7 @@ export function Favorite() {
   const { favoriteMovies } = useMovieContext();
 
   return (
-    <div className="favorite-container">
+    <div className="favorite-page">
       <h1 data-testid='favorite-title'>Favorites</h1>
       <CardList cardGrid={true} results={favoriteMovies} />
     </div>

@@ -61,7 +61,7 @@ export function Detail() {
   return (
     <>
       {movie !== undefined && (
-        <div className="detail">
+        <div className="detail-page">
           {movie.poster_path && (
             <img
               loading="lazy"
@@ -69,11 +69,11 @@ export function Detail() {
               src={getImgUrl({ string_url: movie?.poster_path, width: 300, height: 450 })} alt={movie.title} />
           )}
           <div className="detail-content">
-            <div className="title">
+            <div className="detail-title">
               <h2 data-testid='title'>{movie.title}</h2>
               <span>({new Date(movie.release_date).getFullYear()})</span>
             </div>
-            <div className="date-and-genres">
+            <div className="detail-subtitle">
               <p className="release-date">{formatDate(movie.release_date)}</p>
               <span className="dot"></span>
               <p className="genres">{movie.genres.map((genre, index, arr) => {

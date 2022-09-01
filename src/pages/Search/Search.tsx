@@ -23,7 +23,7 @@ export function Search() {
   }
 
   return (
-    <section className="search-movies">
+    <section className="search-page">
       <h1 >Search Movie</h1>
       <form onSubmit={handleSubmit} className="search-form">
         <input data-testid='search-input' className="search-input" autoFocus type="search" value={searchString} placeholder="Search for movie..."
