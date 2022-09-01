@@ -1,13 +1,14 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { Movie } from "../types/Movie";
+import { SearchResults } from "../types/SearchResults";
 
 export type MovieProviderType = {
   children: ReactNode;
 };
 export type MovieContextType = {
-  searchMovieResult: Movie[];
-  createSearchMovieResultLocal: (results: Movie[]) => void;
+  searchMovieResult: SearchResults
+  createSearchMovieResultLocal: (searchResults: SearchResults) => void;
   favoriteMovies: Movie[];
   addFavoriteMovieLocal: (movie: Movie) => void;
   removeFavoriteMovieLocal: (movie_id: number) => void;
@@ -24,15 +25,15 @@ export function useMovieContext() {
 }
 
 export function MovieProvider({ children }: MovieProviderType) {
-  const [searchMovieResult, setSearchMovieResult] = useState<Movie[]>([]);
+  const [searchMovieResult, setSearchMovieResult] = useState<SearchResults>({} as SearchResults);
   const [favoriteMovies, setFavoriteMovies] = useLocalStorage<Movie[]>(
     "favorite-movies",
     []
   );
 
   // set the results from search and set it to local searchMovieResult state
-  function createSearchMovieResultLocal(results: Movie[]) {
-    setSearchMovieResult(results);
+  function createSearchMovieResultLocal(searchResults: SearchResults) {
+    setSearchMovieResult(searchResults);
   }
 
   /**

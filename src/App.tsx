@@ -8,7 +8,7 @@ function App() {
   const { searchMovieResult } = useMovieContext()
   return (
     <div className="app">
-      {searchMovieResult.length ? <motion.div
+      {searchMovieResult.results ? <motion.div
         className="progress-bar"
         style={{ scaleX: scrollYProgress }}
       /> : ''}
