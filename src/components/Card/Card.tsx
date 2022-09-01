@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { Movie } from "../../types/Movie"
 import { getImgUrl } from "../../utils/getImgUrl"
