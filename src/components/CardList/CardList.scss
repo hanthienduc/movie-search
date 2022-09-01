@@ -13,7 +13,7 @@
 
 .d-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, calc(100% / 4));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   max-width: 1200px;
   justify-content: center;
 }

@@ -16,8 +16,8 @@ export function Card({ movie, flexColumn }: CardType) {
   }
 
   const linkProps = {
-    width: flexColumn ? 342 : 94,
-    height: flexColumn ? 0 : 141,
+    width: flexColumn ? 300 : 94,
+    height: flexColumn ? undefined : 141,
     string_url: movie.poster_path
   }
 
