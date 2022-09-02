@@ -111,7 +111,7 @@ export function Detail() {
                 onClick={toggleFavoriteMovie}
                 Icon={isFavorite ? FaHeart : FaRegHeart}
               />
-              <p className="favorite-label">Add To Favorite</p>
+              <p className="favorite-label">{isFavorite ? 'Remove From' : 'Add To'}  Favorites</p>
 
             </div>
             <p className="tagline">{movie.tagline}</p>
@@ -122,13 +122,13 @@ export function Detail() {
             <p className="vote"
             >
               <CircularProgressbar value={Number(movie.vote_average.toFixed(1))}
-              maxValue={10}
-              text={`${movie.vote_average.toFixed(1)}/10`}
-              styles={buildStyles({
-                textSize: '16px',
-                pathColor: `rgba(27, 127, 204, ${Number(movie.vote_average) / 10})`,
-                backgroundColor: '#3545d4',
-              })}
+                maxValue={10}
+                text={`${movie.vote_average.toFixed(1)}/10`}
+                styles={buildStyles({
+                  textSize: '16px',
+                  pathColor: `rgba(27, 127, 204, ${Number(movie.vote_average) / 10})`,
+                  backgroundColor: '#3545d4',
+                })}
               />
             </p>
             <div className="video-player">
