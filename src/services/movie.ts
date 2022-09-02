@@ -33,3 +33,12 @@ export function getMovieDetail({ movie_id }: SearchCustomType): Promise<any> {
     }
   )
 }
+
+export function getMovieVideos({movie_id}: SearchCustomType) {
+  return makeRequest(
+    `/movie/${movie_id}/videos?api_key=${process.env.REACT_APP_TMDB_API_KEY}`,
+    {
+      method: 'GET'
+    }
+  )
+}
