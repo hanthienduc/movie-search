@@ -14,7 +14,8 @@ import ReactPlayer from "react-player";
 import { Video } from "../../types/Video";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
-
+import { LazyLoadImageComponent } from "../../components/LazyLoadImage/LazyLoadImageComponent";
+import imageHolder from '../../images/imageHolder.png'
 export function Detail() {
   const { movieId } = useParams();
   const {
@@ -85,10 +86,10 @@ export function Detail() {
       {movie !== undefined && (
         <div className="detail-page">
           {movie.poster_path && (
-            <img
-              loading="lazy"
-              className="poster"
-              src={getImgUrl({ string_url: movie?.poster_path, width: 500 })} alt={movie.title} />
+            <LazyLoadImageComponent image={getImgUrl({ string_url: movie?.poster_path, width: 500 })}
+              placeholderImage={imageHolder}
+            />
+
           )}
           <div className="detail-content">
             <div className="detail-title">
